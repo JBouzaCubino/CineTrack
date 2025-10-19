@@ -2,6 +2,10 @@ package com.bouzajesus.cinetrack.data.remote
 
 import com.google.gson.annotations.SerializedName
 
+data class Media(
+    @SerializedName("titles") val titles: List<MediaItem>
+)
+
 data class MediaItem(
     @SerializedName("type") val type: String,
     @SerializedName("primaryTitle") val primaryTitle: String,
