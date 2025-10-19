@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="go_to_settings">Ir a configuración</string>
+    <string name="show_favourites">Mostrar favoritos</string>
+</resources>

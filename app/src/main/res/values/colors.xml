@@ -12,4 +12,5 @@
     <color name="accent">#E53935</color>
 
     <color name="yellow">#F8F805</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>
