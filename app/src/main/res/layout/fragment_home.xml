@@ -8,7 +8,7 @@
     tools:context=".ui.home.HomeFragment">
 
     <SearchView
-        android:id="@+id/searchViewFilms"
+        android:id="@+id/searchViewHome"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,9 +16,9 @@
         android:queryHint="Introduce el título de la película"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewFilms"
+        android:id="@+id/recyclerViewHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/searchViewFilms" />
+        app:layout_constraintTop_toBottomOf="@+id/searchViewHome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
