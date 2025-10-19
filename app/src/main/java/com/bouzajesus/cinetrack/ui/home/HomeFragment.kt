@@ -6,8 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.bouzajesus.cinetrack.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
+import com.bouzajesus.cinetrack.ui.home.recycler_view_setup.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,7 +37,8 @@ class HomeFragment : Fragment() {
 
     private fun initRecyclerView() {
 
-
+        binding.recyclerViewHome.adapter = HomeAdapter()
+        binding.recyclerViewHome.layoutManager = LinearLayoutManager(this.context)
     }
 
 }
