@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui.home
+package com.bouzajesus.cinetrack.ui.home.states
 
 sealed class HomeUiState {
     data object Loading: HomeUiState()
