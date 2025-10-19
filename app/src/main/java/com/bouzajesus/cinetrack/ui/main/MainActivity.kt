@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui
+package com.bouzajesus.cinetrack.ui.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
