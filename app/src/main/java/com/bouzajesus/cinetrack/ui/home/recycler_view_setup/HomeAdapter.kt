@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.R
 import com.bouzajesus.cinetrack.data.remote.MediaItem
+import javax.inject.Inject
 
-class HomeAdapter(private var mediaList: List<MediaItem> = emptyList()) :
+class HomeAdapter @Inject constructor(private var mediaList: List<MediaItem>) :
     RecyclerView.Adapter<HomeViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,

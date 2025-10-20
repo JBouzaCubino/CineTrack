@@ -19,7 +19,7 @@ class HomeViewModel @Inject constructor(private val apiService: MediaApiService)
     private var _state: MutableStateFlow<HomeUiState> = MutableStateFlow(HomeUiState.Loading)
     val state: StateFlow<HomeUiState> = _state
 
-    fun changeState() {
+    fun getTitles() {
         viewModelScope.launch(Dispatchers.IO) {
             val response: Response<Media> = apiService.getTitles()
 
