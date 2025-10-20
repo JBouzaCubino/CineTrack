@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
 import com.bouzajesus.cinetrack.ui.home.recycler_view_setup.HomeAdapter
+import com.bouzajesus.cinetrack.ui.home.states.HomeUiState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,7 +33,33 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initUI()
+        initState()
         initRecyclerView()
+    }
+
+    private fun initState() {
+        homeViewModel.changeState()
+    }
+
+    private fun initUI() {
+        when (homeViewModel.state.value) {
+            is HomeUiState.Error -> initErrorState()
+            HomeUiState.Loading -> initLoadingState()
+            is HomeUiState.Success -> initSuccessState()
+        }
+    }
+
+    private fun initSuccessState() {
+        TODO("Not yet implemented")
+    }
+
+    private fun initLoadingState() {
+        TODO("Not yet implemented")
+    }
+
+    private fun initErrorState() {
+        TODO("Not yet implemented")
     }
 
     private fun initRecyclerView() {
