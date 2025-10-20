@@ -11,5 +11,5 @@
     <color name="secondary_text">#B8B8B8</color>
     <color name="accent">#FFD369</color>
 
-    <color name="yellow">#F8F805</color>
+    <color name="progress_bar_color">#7986CB</color>
 </resources>
