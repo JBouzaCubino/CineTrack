@@ -15,7 +15,7 @@ class NetworkModule {
     @Provides
     fun provideRetrofit(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("api.imdbapi.dev")
+            .baseUrl("https://api.imdbapi.dev")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
