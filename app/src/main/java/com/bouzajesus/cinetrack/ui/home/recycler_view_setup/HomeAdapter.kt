@@ -5,9 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.R
 import com.bouzajesus.cinetrack.data.remote.MediaItem
+import com.bouzajesus.cinetrack.domain.models.Media
 import javax.inject.Inject
 
-class HomeAdapter @Inject constructor(private var mediaList: List<MediaItem>) :
+class HomeAdapter @Inject constructor(private var mediaList: List<Media>) :
     RecyclerView.Adapter<HomeViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -26,7 +27,7 @@ class HomeAdapter @Inject constructor(private var mediaList: List<MediaItem>) :
 
     override fun getItemCount(): Int = mediaList.size
 
-    fun updateList(newList: List<MediaItem>){
+    fun updateList(newList: List<Media>){
         mediaList = newList
         notifyDataSetChanged()
     }

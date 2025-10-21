@@ -1,6 +1,6 @@
 package com.bouzajesus.cinetrack.di
 
-import com.bouzajesus.cinetrack.data.remote.MediaItem
+import com.bouzajesus.cinetrack.domain.models.Media
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -8,10 +8,10 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
-class MediaItemListModule {
+class MediaListModule {
 
     @Provides
-    fun provideMediaItemList(): List<MediaItem>{
+    fun provideMediaList(): List<Media>{
         return emptyList()
     }
 }

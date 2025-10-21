@@ -6,5 +6,5 @@ import retrofit2.http.GET
 interface MediaApiService {
 
     @GET("/titles")
-    suspend fun getTitles(): Response<Media>
+    suspend fun getTitles(): Response<MediaDataModel>
 }

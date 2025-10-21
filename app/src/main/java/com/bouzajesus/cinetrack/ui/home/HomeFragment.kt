@@ -5,14 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bouzajesus.cinetrack.data.remote.MediaItem
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
+import com.bouzajesus.cinetrack.domain.models.Media
 import com.bouzajesus.cinetrack.ui.home.recycler_view_setup.HomeAdapter
 import com.bouzajesus.cinetrack.ui.home.states.HomeUiState
 import dagger.hilt.android.AndroidEntryPoint
@@ -68,7 +67,7 @@ class HomeFragment : Fragment() {
         }
     }
 
-    private fun initSuccessState(mediaItemList: List<MediaItem>) {
+    private fun initSuccessState(mediaItemList: List<Media>) {
         binding.loadingProgressBar.isVisible = false
         adapter.updateList(mediaItemList)
     }
