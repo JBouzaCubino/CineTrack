@@ -1,5 +1,6 @@
 package com.bouzajesus.cinetrack.ui.home
 
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bouzajesus.cinetrack.domain.models.Media
@@ -11,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import okio.IOException
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val showAllShowsUseCase: ShowAllShowsUseCase) : ViewModel() {
@@ -20,15 +22,13 @@ class HomeViewModel @Inject constructor(private val showAllShowsUseCase: ShowAll
 
     fun getTitles() {
         viewModelScope.launch(Dispatchers.IO) {
-            val titleList: List<Media> = showAllShowsUseCase.execute()
 
-            //if the API response is successful and the object obtained is not null, success state
-            //Otherwise, error state
-            if (titleList.isEmpty()) {
-                _state.value = HomeUiState.Error("Lista vacía")
-
-            } else {
+            try {
+                val titleList: List<Media> = showAllShowsUseCase.execute()
                 _state.value = HomeUiState.Success(titleList)
+            }
+            catch (e: IOException){
+                _state.value = HomeUiState.Error(e.message ?: "Error desconocido")
             }
         }
     }
