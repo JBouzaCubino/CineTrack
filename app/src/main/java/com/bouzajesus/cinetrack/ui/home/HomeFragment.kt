@@ -1,7 +1,6 @@
 package com.bouzajesus.cinetrack.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
 import com.bouzajesus.cinetrack.domain.models.Media
 import com.bouzajesus.cinetrack.ui.home.recycler_view_setup.HomeAdapter
@@ -86,7 +85,7 @@ class HomeFragment : Fragment() {
     private fun initRecyclerView() {
 
         binding.recyclerViewHome.adapter = adapter
-        binding.recyclerViewHome.layoutManager = LinearLayoutManager(this.context)
+        binding.recyclerViewHome.layoutManager = GridLayoutManager(this.context, 2)
     }
 
 }

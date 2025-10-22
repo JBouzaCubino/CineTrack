@@ -2,8 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     app:cardCornerRadius="16dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,15 +13,28 @@
         android:background="@color/surface">
 
         <TextView
+            android:fontFamily="@font/manrope_semibold"
+            android:layout_marginTop="8dp"
+            android:paddingHorizontal="12dp"
             android:id="@+id/tvPrimaryTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Título de prueba" />
+            tools:text="Título de prueba, Título de prueba, Título de prueba, Título de prueba" />
 
-
+        <ImageView
+            android:id="@+id/ivShowRvItem"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:contentDescription="@string/show_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrimaryTitle"
+            tools:src="@drawable/tools_show_image"
+            android:scaleType="fitCenter"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

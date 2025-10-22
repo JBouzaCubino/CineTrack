@@ -4,6 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.databinding.HomeRecyclerViewItemBinding
 import com.bouzajesus.cinetrack.domain.models.Media
+import com.bumptech.glide.Glide
 
 class HomeViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
@@ -12,5 +13,10 @@ class HomeViewHolder(view: View): RecyclerView.ViewHolder(view) {
     fun render(show: Media) {
 
         binding.tvPrimaryTitle.text = show.primaryTitle
+
+        Glide
+            .with(itemView)
+            .load(show.primaryImageUrl)
+            .into(binding.ivShowRvItem)
     }
 }
