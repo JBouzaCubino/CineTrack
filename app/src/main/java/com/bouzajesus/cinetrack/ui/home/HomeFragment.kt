@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -79,8 +80,7 @@ class HomeFragment : Fragment() {
     private fun initErrorState(message: String) {
         binding.loadingProgressBar.isVisible = false
         adapter.updateList(emptyList())
-        //Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
-        Log.e("debug", message)
+        Toast.makeText(this.context, message, Toast.LENGTH_SHORT).show()
     }
 
     private fun initRecyclerView() {
