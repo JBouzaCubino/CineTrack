@@ -2,6 +2,7 @@ package com.bouzajesus.cinetrack.ui.home.recycler_view_setup
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.bouzajesus.cinetrack.R
 import com.bouzajesus.cinetrack.databinding.HomeRecyclerViewItemBinding
 import com.bouzajesus.cinetrack.domain.models.Media
 import com.bumptech.glide.Glide
@@ -17,6 +18,7 @@ class HomeViewHolder(view: View): RecyclerView.ViewHolder(view) {
         Glide
             .with(itemView)
             .load(show.primaryImageUrl)
+            .placeholder(R.drawable.loading)
             .into(binding.ivShowRvItem)
     }
 }
