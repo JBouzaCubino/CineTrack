@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
 import com.bouzajesus.cinetrack.domain.models.Media
@@ -45,26 +48,49 @@ class HomeFragment : Fragment() {
 
         initRecyclerView()
         initUI()
-        initState()
+
     }
 
-    private fun initState() {
+    private fun showTitles() {
         homeViewModel.getTitles()
     }
 
     private fun initUI() {
 
+        initViewModelCollector()
+        showTitles()
+        initSearchView()
+    }
+
+    private fun initViewModelCollector() {
         lifecycleScope.launch {
-            homeViewModel.state.collect { state ->
-                when (state) {
-                    is HomeUiState.Error -> initErrorState(state.message)
-                    HomeUiState.Loading -> initLoadingState()
-                    is HomeUiState.Success -> {
-                        initSuccessState(state.mediaItemList)
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                homeViewModel.state.collect { state ->
+                    when (state) {
+                        is HomeUiState.Error -> initErrorState(state.message)
+                        HomeUiState.Loading -> initLoadingState()
+                        is HomeUiState.Success -> {
+                            initSuccessState(state.mediaItemList)
+                        }
                     }
                 }
             }
         }
+    }
+
+    private fun initSearchView() {
+        binding.searchViewHome.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextChange(name: String?): Boolean {
+                homeViewModel.getShowByName(name ?: "")
+                return true
+            }
+
+            override fun onQueryTextSubmit(name: String?): Boolean {
+                homeViewModel.getShowByName(name ?: "")
+                return false
+            }
+
+        })
     }
 
     private fun initSuccessState(mediaItemList: List<Media>) {

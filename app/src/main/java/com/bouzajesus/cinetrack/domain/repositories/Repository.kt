@@ -5,4 +5,6 @@ import com.bouzajesus.cinetrack.domain.models.Media
 interface Repository {
 
     suspend fun getAllTitles(): List<Media>
+
+    suspend fun getShowByName(name: String): List<Media>
 }
