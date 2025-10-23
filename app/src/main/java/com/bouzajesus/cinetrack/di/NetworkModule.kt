@@ -1,6 +1,6 @@
 package com.bouzajesus.cinetrack.di
 
-import com.bouzajesus.cinetrack.data.remote.MediaApiService
+import com.bouzajesus.cinetrack.data.remote.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,7 +21,7 @@ class NetworkModule {
     }
 
     @Provides
-    fun provideApiService(retrofit: Retrofit): MediaApiService{
-        return retrofit.create(MediaApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): ApiService{
+        return retrofit.create(ApiService::class.java)
     }
 }

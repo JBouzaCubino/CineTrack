@@ -1,8 +1,7 @@
 package com.bouzajesus.cinetrack.di
 
 import com.bouzajesus.cinetrack.data.RepositoryImpl
-import com.bouzajesus.cinetrack.data.RepositoryImpl_Factory
-import com.bouzajesus.cinetrack.data.remote.MediaApiService
+import com.bouzajesus.cinetrack.data.remote.ApiService
 import com.bouzajesus.cinetrack.domain.repositories.Repository
 import dagger.Module
 import dagger.Provides
@@ -14,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 class RepositoryModule {
 
     @Provides
-    fun provideRepository(mediaApiService: MediaApiService): Repository{
+    fun provideRepository(mediaApiService: ApiService): Repository{
         return RepositoryImpl(mediaApiService)
     }
 }

@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.R
-import com.bouzajesus.cinetrack.data.remote.MediaItem
 import com.bouzajesus.cinetrack.domain.models.Media
 import javax.inject.Inject
 
