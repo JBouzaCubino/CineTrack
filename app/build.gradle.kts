@@ -26,10 +26,17 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "HTTP_LOG_LEVEL", "\"NONE\"")
+            resValue("string", "app_name", "\"CineTrack\"")
+        }
+        debug {
+            buildConfigField("String", "HTTP_LOG_LEVEL", "\"BODY\"")
+            resValue("string", "app_name", "\"[DEBUG]CineTrack\"")
         }
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -59,6 +66,9 @@ dependencies {
 
     // Glide
     implementation(libs.glide)
+
+    // LogginInterceptor
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
