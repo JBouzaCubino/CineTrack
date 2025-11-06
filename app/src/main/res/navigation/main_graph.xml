@@ -9,5 +9,13 @@
         android:id="@+id/homeFragment"
         android:name="com.bouzajesus.cinetrack.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.bouzajesus.cinetrack.ui.details.DetailActivity"
+        android:label="DetailActivity" />
 </navigation>
