@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui.home.recycler_view_setup
+package com.bouzajesus.cinetrack.ui.home.recyclerview_setup
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -31,13 +31,13 @@
 
             <ImageButton
                 android:id="@+id/ib_settings"
-                style="@style/myImagebutton"
+                style="@style/imageButtonStyle"
                 android:contentDescription="@string/go_to_settings"
                 android:src="@drawable/ic_settings" />
 
             <ImageButton
                 android:id="@+id/ib_favourites"
-                style="@style/myImagebutton"
+                style="@style/imageButtonStyle"
                 android:contentDescription="@string/show_favourites"
                 android:src="@drawable/ic_favourites" />
 
