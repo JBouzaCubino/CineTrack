@@ -10,6 +10,7 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/ivPrimaryImageDetail"
             tools:src="@drawable/tools_show_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -47,16 +48,18 @@
                 android:textSize="30sp"/>
 
             <TextView
+                android:id="@+id/tvPlotCardViewDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvPlotCardViewDetails"
-                app:layout_constraintTop_toBottomOf="@+id/tvPrimaryTitleCardViewDetails"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:text="Plot de prueba Plot de prueba Plot de prueba Plot de prueba"
+                android:fontFamily="@font/manrope"
+                android:textColor="@color/secondary_text"
                 android:textSize="20sp"
-                android:textColor="@color/secondary_text"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrimaryTitleCardViewDetails"
+                tools:text="Plot de prueba Plot de prueba Plot de prueba Plot de prueba" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDetailGenres"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/btnFavouritesDetails"
