@@ -8,6 +8,7 @@
     <string name="show_favourites">Mostrar favoritos</string>
     <string name="show_image">Mostrar imagen</string>
     <string name="button_back">Botón atrás</string>
+    <string name="genre_image">Imagen representativa del género</string>
 
     //Botones
     <string name="add_to_favourites">Añadir a favoritos</string>
@@ -40,4 +41,5 @@
     <string name="thriller_genre">Thriller</string>
     <string name="war_genre">Bélico</string>
     <string name="western_genre">Oeste</string>
+    <string name="unknown_genre">Desconocido</string>
 </resources>
