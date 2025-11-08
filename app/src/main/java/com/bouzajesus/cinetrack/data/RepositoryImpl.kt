@@ -1,9 +1,9 @@
 package com.bouzajesus.cinetrack.data
 
+import com.bouzajesus.cinetrack.data.mappers.DataDomainMapper
 import com.bouzajesus.cinetrack.data.remote.ApiService
-import com.bouzajesus.cinetrack.data.remote.models.CategoriesResponseModel
 import com.bouzajesus.cinetrack.data.remote.models.MediaDataResponseModel
-import com.bouzajesus.cinetrack.domain.models.Category
+import com.bouzajesus.cinetrack.data.remote.models.MediaItem
 import com.bouzajesus.cinetrack.domain.models.Media
 import com.bouzajesus.cinetrack.domain.repositories.Repository
 import okio.IOException
@@ -15,33 +15,33 @@ class RepositoryImpl @Inject constructor (private val apiService: ApiService) : 
     override suspend fun getAllTitles(): List<Media>{
         val response: Response<MediaDataResponseModel> = apiService.getTitles()
 
-        return responseCheck(response)
+        return responseMediaCheck(response)
     }
 
     override suspend fun getShowByName(name: String): List<Media> {
         val response: Response<MediaDataResponseModel> = apiService.getTitleByName(name)
 
-        return responseCheck(response)
+        return responseMediaCheck(response)
     }
 
-    override suspend fun getCategories(): List<Category> {
-        val response = apiService.getInterests()
+    override suspend fun getShowById(showId: String): Media {
+        val response = apiService.getTitleById(showId)
 
-        return responseCheck(response)
+        return responseMediaItemCheck(response)
     }
 
-    private fun responseCheck(response: Response<MediaDataResponseModel>): List<Media>{
+    private fun responseMediaCheck(response: Response<MediaDataResponseModel>): List<Media>{
         if(response.isSuccessful){
-            return response.body()?.toDomain() ?: emptyList()
+            return DataDomainMapper.toDomain(response.body())
         }
         else{
             throw IOException("${response.code()}: ${response.message()}")
         }
     }
 
-    private fun responseCheck(response: Response<CategoriesResponseModel>): List<Category>{
+    private fun responseMediaItemCheck(response: Response<MediaItem>): Media{
         if(response.isSuccessful){
-            return response.body()?.toDomain() ?: emptyList()
+            return DataDomainMapper.toDomain(response.body())
         }
         else{
             throw IOException("${response.code()}: ${response.message()}")

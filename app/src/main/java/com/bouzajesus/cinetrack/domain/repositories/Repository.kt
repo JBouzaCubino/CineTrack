@@ -9,5 +9,5 @@ interface Repository {
 
     suspend fun getShowByName(name: String): List<Media>
 
-    suspend fun getCategories(): List<Category>
+    suspend fun getShowById(showId: String): Media
 }
