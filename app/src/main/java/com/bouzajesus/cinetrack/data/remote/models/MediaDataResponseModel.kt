@@ -11,7 +11,10 @@ data class MediaDataResponseModel(
             Media(
                 it.type,
             it.primaryTitle,
-            it.primaryImage?.url ?: ""
+                it.primaryImage?.url ?: "",
+                it.plot,
+                it.rating.aggregateRating,
+                it.rating.voteCount
             )
         }
     }
@@ -20,9 +23,16 @@ data class MediaDataResponseModel(
 data class MediaItem(
     @SerializedName("type") val type: String,
     @SerializedName("primaryTitle") val primaryTitle: String,
-    @SerializedName("primaryImage") val primaryImage: PrimaryImageItem?
+    @SerializedName("primaryImage") val primaryImage: PrimaryImageItem?,
+    @SerializedName("rating") val rating: Rating,
+    @SerializedName("plot") val plot: String
 )
 
 data class PrimaryImageItem(
     @SerializedName("url") val url: String
+)
+
+data class Rating(
+    @SerializedName("aggregateRating") val aggregateRating: Float,
+    @SerializedName("voteCount") val voteCount: Int
 )
