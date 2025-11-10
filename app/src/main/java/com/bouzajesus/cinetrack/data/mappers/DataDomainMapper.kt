@@ -13,6 +13,9 @@ class DataDomainMapper {
 
             val genresList: List<Genres> = mapToGenre(mediaItem.genres)
 
+            //Map from rating over 10 to rating over 5
+            val aggregateRatingMapped: Float = mediaItem.rating?.aggregateRating?.div(2) ?: 0f
+
             return Media(
                 mediaItem.id,
                 mediaItem.type,
@@ -20,7 +23,7 @@ class DataDomainMapper {
                 mediaItem.primaryImage?.url ?: "",
                 genresList,
                 mediaItem.plot,
-                mediaItem.rating?.aggregateRating ?: 0f,
+                aggregateRatingMapped,
                 mediaItem.rating?.voteCount ?: 0
             )
         }
