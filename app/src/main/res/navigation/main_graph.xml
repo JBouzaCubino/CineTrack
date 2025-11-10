@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.bouzajesus.cinetrack.ui.home.HomeFragment"
+        android:name="com.bouzajesus.cinetrack.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <activity
         android:id="@+id/detailActivity"
-        android:name="com.bouzajesus.cinetrack.ui.details.DetailActivity"
+        android:name="com.bouzajesus.cinetrack.presentation.details.DetailActivity"
         android:label="DetailActivity" >
         <argument
             android:name="mediaId"
