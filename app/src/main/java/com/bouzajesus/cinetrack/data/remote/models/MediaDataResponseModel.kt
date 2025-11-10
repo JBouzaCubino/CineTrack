@@ -1,7 +1,5 @@
 package com.bouzajesus.cinetrack.data.remote.models
 
-import com.bouzajesus.cinetrack.domain.models.Genres
-import com.bouzajesus.cinetrack.domain.models.Media
 import com.google.gson.annotations.SerializedName
 
 data class MediaDataResponseModel(
