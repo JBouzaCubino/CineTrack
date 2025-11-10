@@ -15,10 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CineTrack">
         <activity
-            android:name=".ui.details.DetailActivity"
+            android:name=".presentation.details.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

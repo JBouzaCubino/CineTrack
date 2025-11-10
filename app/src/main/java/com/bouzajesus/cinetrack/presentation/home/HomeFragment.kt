@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui.home
+package com.bouzajesus.cinetrack.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,8 +16,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
 import com.bouzajesus.cinetrack.domain.models.Media
-import com.bouzajesus.cinetrack.ui.home.recyclerview_setup.HomeAdapter
-import com.bouzajesus.cinetrack.ui.home.states.HomeUiState
+import com.bouzajesus.cinetrack.presentation.home.recyclerview_setup.HomeAdapter
+import com.bouzajesus.cinetrack.presentation.home.states.HomeUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

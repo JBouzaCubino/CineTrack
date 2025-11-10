@@ -1,11 +1,11 @@
-package com.bouzajesus.cinetrack.ui.home
+package com.bouzajesus.cinetrack.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bouzajesus.cinetrack.domain.models.Media
 import com.bouzajesus.cinetrack.domain.usecases.GetShowByNameUseCase
 import com.bouzajesus.cinetrack.domain.usecases.ShowAllShowsUseCase
-import com.bouzajesus.cinetrack.ui.home.states.HomeUiState
+import com.bouzajesus.cinetrack.presentation.home.states.HomeUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.Dispatchers

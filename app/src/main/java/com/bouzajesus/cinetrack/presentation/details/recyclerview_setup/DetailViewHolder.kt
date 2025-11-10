@@ -1,10 +1,10 @@
-package com.bouzajesus.cinetrack.ui.details.recyclerview_setup
+package com.bouzajesus.cinetrack.presentation.details.recyclerview_setup
 
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.databinding.DetailRecyclerViewItemBinding
-import com.bouzajesus.cinetrack.ui.models.GenresModel
+import com.bouzajesus.cinetrack.presentation.models.GenresModel
 
 class DetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

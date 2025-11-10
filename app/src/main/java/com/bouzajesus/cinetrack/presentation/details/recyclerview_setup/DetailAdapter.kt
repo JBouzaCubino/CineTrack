@@ -1,10 +1,10 @@
-package com.bouzajesus.cinetrack.ui.details.recyclerview_setup
+package com.bouzajesus.cinetrack.presentation.details.recyclerview_setup
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.R
-import com.bouzajesus.cinetrack.ui.models.GenresModel
+import com.bouzajesus.cinetrack.presentation.models.GenresModel
 
 class DetailAdapter(private var list: List<GenresModel> = emptyList()): RecyclerView.Adapter<DetailViewHolder>() {
     override fun onCreateViewHolder(

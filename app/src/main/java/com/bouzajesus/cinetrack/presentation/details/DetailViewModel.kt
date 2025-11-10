@@ -1,9 +1,9 @@
-package com.bouzajesus.cinetrack.ui.details
+package com.bouzajesus.cinetrack.presentation.details
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bouzajesus.cinetrack.domain.usecases.GetShowByIdUseCase
-import com.bouzajesus.cinetrack.ui.details.states.DetailUiState
+import com.bouzajesus.cinetrack.presentation.details.states.DetailUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow

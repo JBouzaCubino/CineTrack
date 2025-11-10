@@ -1,8 +1,8 @@
-package com.bouzajesus.cinetrack.ui.mappers
+package com.bouzajesus.cinetrack.presentation.mappers
 
 import com.bouzajesus.cinetrack.domain.models.Genres
 import com.bouzajesus.cinetrack.domain.models.Media
-import com.bouzajesus.cinetrack.ui.models.GenresModel
+import com.bouzajesus.cinetrack.presentation.models.GenresModel
 
 class GenresToGenresModelMapper {
 

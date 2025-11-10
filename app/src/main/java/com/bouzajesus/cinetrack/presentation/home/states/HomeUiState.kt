@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui.home.states
+package com.bouzajesus.cinetrack.presentation.home.states
 
 import com.bouzajesus.cinetrack.domain.models.Media
 

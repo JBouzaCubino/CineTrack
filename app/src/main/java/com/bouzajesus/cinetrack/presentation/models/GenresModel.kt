@@ -1,4 +1,4 @@
-package com.bouzajesus.cinetrack.ui.models
+package com.bouzajesus.cinetrack.presentation.models
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
