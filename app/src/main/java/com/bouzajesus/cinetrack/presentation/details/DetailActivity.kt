@@ -1,19 +1,22 @@
-package com.bouzajesus.cinetrack.ui.details
+package com.bouzajesus.cinetrack.presentation.details
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.core.view.doOnLayout
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bouzajesus.cinetrack.databinding.ActivityDetailBinding
 import com.bouzajesus.cinetrack.domain.models.Media
-import com.bouzajesus.cinetrack.ui.details.recyclerview_setup.DetailAdapter
-import com.bouzajesus.cinetrack.ui.details.states.DetailUiState
-import com.bouzajesus.cinetrack.ui.mappers.GenresToGenresModelMapper
+import com.bouzajesus.cinetrack.presentation.details.recyclerview_setup.DetailAdapter
+import com.bouzajesus.cinetrack.presentation.details.states.DetailUiState
+import com.bouzajesus.cinetrack.presentation.mappers.GenresToGenresModelMapper
 import com.bumptech.glide.Glide
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -96,5 +99,13 @@ class DetailActivity : AppCompatActivity() {
         binding.tvPrimaryTitleCardViewDetails.text = media.primaryTitle
 
         binding.tvPlotCardViewDetails.text = media.plot
+
+        binding.ratingDetails.rating = media.rating
+
+        //Behavior's height = layoutFirstShowInfo's height (after rendering text)
+        binding.layoutFirstShowInfo.doOnLayout { view ->
+            val behavior = BottomSheetBehavior.from<CardView>(binding.cvShowDetails)
+            behavior.peekHeight = view.height
+        }
     }
 }
