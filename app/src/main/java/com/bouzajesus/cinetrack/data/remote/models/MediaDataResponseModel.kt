@@ -1,30 +1,20 @@
 package com.bouzajesus.cinetrack.data.remote.models
 
+import com.bouzajesus.cinetrack.domain.models.Genres
 import com.bouzajesus.cinetrack.domain.models.Media
 import com.google.gson.annotations.SerializedName
 
 data class MediaDataResponseModel(
     @SerializedName("titles") val titles: List<MediaItem>
-){
-    fun toDomain(): List<Media> {
-        return this.titles.map {
-            Media(
-                it.type,
-            it.primaryTitle,
-                it.primaryImage?.url ?: "",
-                it.plot,
-                it.rating.aggregateRating,
-                it.rating.voteCount
-            )
-        }
-    }
-}
+)
 
 data class MediaItem(
+    @SerializedName("id") val id: String,
     @SerializedName("type") val type: String,
     @SerializedName("primaryTitle") val primaryTitle: String,
     @SerializedName("primaryImage") val primaryImage: PrimaryImageItem?,
-    @SerializedName("rating") val rating: Rating,
+    @SerializedName("genres") val genres: List<String>,
+    @SerializedName("rating") val rating: Rating?,
     @SerializedName("plot") val plot: String
 )
 
