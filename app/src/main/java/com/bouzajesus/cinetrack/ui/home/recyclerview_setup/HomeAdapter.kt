@@ -5,9 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bouzajesus.cinetrack.R
 import com.bouzajesus.cinetrack.domain.models.Media
-import javax.inject.Inject
 
-class HomeAdapter @Inject constructor(private var mediaList: List<Media>) :
+class HomeAdapter (private var mediaList: List<Media> = emptyList(), private val onItemClick: (media: Media) -> Unit) :
     RecyclerView.Adapter<HomeViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -21,7 +20,7 @@ class HomeAdapter @Inject constructor(private var mediaList: List<Media>) :
         holder: HomeViewHolder,
         position: Int
     ) {
-        holder.render(mediaList[position])
+        holder.render(mediaList[position], onItemClick)
     }
 
     override fun getItemCount(): Int = mediaList.size

@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bouzajesus.cinetrack.databinding.FragmentHomeBinding
 import com.bouzajesus.cinetrack.domain.models.Media
@@ -19,7 +20,6 @@ import com.bouzajesus.cinetrack.ui.home.recyclerview_setup.HomeAdapter
 import com.bouzajesus.cinetrack.ui.home.states.HomeUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -32,8 +32,7 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
 
     //Adapter
-    @Inject
-    lateinit var adapter: HomeAdapter
+    private lateinit var adapter: HomeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -110,8 +109,16 @@ class HomeFragment : Fragment() {
 
     private fun initRecyclerView() {
 
+        initAdapter()
         binding.recyclerViewHome.adapter = adapter
         binding.recyclerViewHome.layoutManager = GridLayoutManager(this.context, 2)
+    }
+
+    private fun initAdapter() {
+        adapter = HomeAdapter { media ->
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailActivity(media.id)
+            findNavController().navigate(action)
+        }
     }
 
 }

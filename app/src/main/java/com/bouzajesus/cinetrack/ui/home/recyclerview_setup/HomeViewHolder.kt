@@ -11,7 +11,7 @@ class HomeViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
     private val binding: HomeRecyclerViewItemBinding = HomeRecyclerViewItemBinding.bind(view)
 
-    fun render(show: Media) {
+    fun render(show: Media, onItemClick: (media:Media) -> Unit) {
 
         binding.tvPrimaryTitle.text = show.primaryTitle
 
@@ -20,5 +20,7 @@ class HomeViewHolder(view: View): RecyclerView.ViewHolder(view) {
             .load(show.primaryImageUrl)
             .placeholder(R.drawable.loading)
             .into(binding.ivShowRvItem)
+
+        binding.rvHomeItem.setOnClickListener { onItemClick(show) }
     }
 }
