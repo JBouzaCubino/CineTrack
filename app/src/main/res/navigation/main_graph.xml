@@ -17,5 +17,9 @@
     <activity
         android:id="@+id/detailActivity"
         android:name="com.bouzajesus.cinetrack.ui.details.DetailActivity"
-        android:label="DetailActivity" />
+        android:label="DetailActivity" >
+        <argument
+            android:name="mediaId"
+            app:argType="string" />
+    </activity>
 </navigation>
