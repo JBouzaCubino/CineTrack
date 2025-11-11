@@ -30,15 +30,23 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvShowDetails"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             app:cardCornerRadius="16dp"
-            app:cardBackgroundColor="@color/background">
+            app:cardBackgroundColor="@color/surface">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingHorizontal="16dp">
+
+            <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
                 android:id="@+id/layoutFirstShowInfo"
@@ -74,11 +82,9 @@
             </LinearLayout>
 
             <RatingBar
+                style="@style/ratingBarStyle"
+                tools:rating="3.5"
                 android:id="@+id/ratingDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:stepSize="0.1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/layoutFirstShowInfo" />
@@ -121,6 +127,6 @@
         android:contentDescription="@string/button_back"
         android:layout_margin="16dp"
         android:src="@drawable/ic_back"
-        app:backgroundTint="@color/secondary"/>
+        app:backgroundTint="@color/primary"/>
 
 </FrameLayout>
