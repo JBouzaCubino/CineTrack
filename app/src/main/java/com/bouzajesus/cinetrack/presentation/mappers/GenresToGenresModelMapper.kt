@@ -38,7 +38,7 @@ class GenresToGenresModelMapper {
                     Genres.Thriller -> GenresModel.Thriller
                     Genres.War -> GenresModel.War
                     Genres.Western -> GenresModel.Western
-                    Genres.Unknown -> GenresModel.Unknown
+                    Genres.Other -> GenresModel.Other
                 }
             }
         }

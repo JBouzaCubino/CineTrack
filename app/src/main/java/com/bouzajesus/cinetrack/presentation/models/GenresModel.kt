@@ -78,5 +78,5 @@ sealed class GenresModel(genre: Genres, @StringRes val name: Int, @DrawableRes v
 
     data object War : GenresModel(Genres.War, R.string.war_genre, R.drawable.ic_war)
     data object Western : GenresModel(Genres.Western, R.string.western_genre, R.drawable.ic_western)
-    data object Unknown : GenresModel(Genres.Unknown, R.string.unknown_genre, R.drawable.ic_unknown)
+    data object Other : GenresModel(Genres.Other, R.string.other_genre, R.drawable.ic_unknown)
 }

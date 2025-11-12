@@ -28,5 +28,5 @@ enum class Genres {
     Thriller,
     War,
     Western,
-    Unknown
+    Other
 }
