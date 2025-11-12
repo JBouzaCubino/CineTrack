@@ -6,7 +6,7 @@ data class Media(
     val primaryTitle: String,
     val primaryImageUrl: String,
     val genres: List<Genres>,
-    val plot: String,
+    val plot: String?,
     val rating: Float,
     val voteCount: Int
 )

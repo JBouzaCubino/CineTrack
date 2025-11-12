@@ -13,7 +13,7 @@ data class MediaItem(
     @SerializedName("primaryImage") val primaryImage: PrimaryImageItem?,
     @SerializedName("genres") val genres: List<String>,
     @SerializedName("rating") val rating: Rating?,
-    @SerializedName("plot") val plot: String
+    @SerializedName("plot") val plot: String?
 )
 
 data class PrimaryImageItem(
