@@ -22,7 +22,7 @@ class DataDomainMapper {
                 mediaItem.primaryTitle,
                 mediaItem.primaryImage?.url ?: "",
                 genresList,
-                mediaItem.plot,
+                mediaItem.plot ?: "",
                 aggregateRatingMapped,
                 mediaItem.rating?.voteCount ?: 0
             )
@@ -43,7 +43,9 @@ class DataDomainMapper {
         }
 
         private fun mapToGenre(value: List<String>): List<Genres> {
-            return value.map {
+            if(value.isNullOrEmpty()) return emptyList()
+
+            else return value.map {
                 when(it.lowercase()){
                     "action" -> Genres.Action
                     "adventure" -> Genres.Adventure
@@ -65,14 +67,14 @@ class DataDomainMapper {
                     "mystery" -> Genres.Mystery
                     "reality" -> Genres.Reality
                     "romance" -> Genres.Romance
-                    "scifi" -> Genres.Scifi
+                    "sci-fi" -> Genres.Scifi
                     "short" -> Genres.Short
                     "sport" -> Genres.Sport
                     "suspense" -> Genres.Suspense
                     "thriller" -> Genres.Thriller
                     "war" -> Genres.War
                     "western" -> Genres.Western
-                    else -> Genres.Unknown
+                    else -> Genres.Other
                 }
             }
         }
